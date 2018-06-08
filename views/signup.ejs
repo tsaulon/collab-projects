@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+    <head>
+        <title>Sign Up</title>
+        <link href="css/style.css" rel="stylesheet"> <!--Searching from static '/public' directory.-->
+    </head>
+    <body>
+        <div><!--TODO: Maintain visibility during signup process-->
+            <h1 id="signup">Sign up</h1>
+            
+            <form action="create-user" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input id="password" type="password" name="password" placeholder="Password" onkeyup="validate();" required>
+                <input id="vpassword" type="password" name="vpassword" placeholder="Verify Password" onkeyup="validate();" required>
+                <button type="submit" name="submit" id="submit" disabled>Ok!e</button> <!-- TODO: Style button to same fashion as h3 tag (Ok!e) below. -->
+            </form>
+            
+            <h3>Ok!e</h3> <!-- TODO: Remove this after above style change. (Leaving for reference purposes) -->
+            <h2>Already have an account? <a href="#">Sign in</a>.</h2> <!--TODO: Style change for anchor tag.-->
+        </div>
+        <div>   <!--TODO: Set div contents to invisible and visible when user has been created.-->
+            <h1><!-- Add newly generated username here. --> </h1>
+        </div>
+
+        <script type="text/javascript" src="js/signup-validator.js"></script> <!--Let page load before initializing script.-->
+        <script>
+            var confirmation = <%= confirmation %>;
+        </script>
+    </body>
+</html>
