@@ -6,7 +6,7 @@
         <link href="css/style.css" rel="stylesheet"> <!--Searching from static '/public' directory.-->
     </head>
     <body>
-        <div><!--TODO: Maintain visibility during signup process-->
+        <div id="form-container"><!--TODO: Maintain visibility during signup process-->
             <h1 id="signup">Sign up</h1>
             
             <form action="create-user" method="post">
@@ -16,17 +16,32 @@
                 <input id="vpassword" type="password" name="vpassword" placeholder="Verify Password" onkeyup="validate();" required>
                 <button type="submit" name="submit" id="submit" disabled>Ok!e</button> <!-- TODO: Style button to same fashion as h3 tag (Ok!e) below. -->
             </form>
-            
-            <h3>Ok!e</h3> <!-- TODO: Remove this after above style change. (Leaving for reference purposes) -->
             <h2>Already have an account? <a href="#">Sign in</a>.</h2> <!--TODO: Style change for anchor tag.-->
         </div>
-
-        <div>   <!--TODO: Set div contents to invisible and visible when user has been created.-->
-            <h1><!-- Add newly generated username here. --> Awesome Awesome Engineer</h1>
+        <div>
+            <h1 id="username"><!--Username is generated here--></h1>
         </div>
+    <canvas id="my-canvas"></canvas>
         <script type="text/javascript" src="js/signup-validator.js"></script> <!--Let page load before initializing script.-->
-        <script>
+        <script type="text/javascript" src="confetti-js/dist/index.min.js"></script>
+        <script type="text/javascript">
+            
+            //EJS parameters
             var confirmation = <%= confirmation %>;
+            var username = <%- JSON.stringify(username) %>;
+
+            if(confirmation)
+            {
+                var confettiSettings = { target: 'my-canvas', clock: 2};
+                var confetti = new ConfettiGenerator(confettiSettings);
+                confetti.render();
+
+                document.getElementById("username").textContent = username;
+                document.getElementById("form-container").style.visibility = "hidden";
+            }
+
+            
+
         </script>
     </body>
 </html>

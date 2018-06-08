@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 body{
-    font-family:"Lato", sans-serif;
+    font-family:"Lato";
     color:#35B6BF;
     background-color:rgba(53,182,191,0.2);
     font-size:15px;
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: 0.5px;
 }
 
@@ -76,29 +76,51 @@ h2{
     font-weight: 100;
     font-size: 13px;
     text-align: center;
-    margin-top:-50px;
+    margin-top: 35px;
 }
 
 
 form{
     background-color:white;
     width:30%;
-    height:250px;
+    height:230px;
     margin: 0 auto;
     padding: 35px 50px;
     align-content: center;
 }
 
-
-h3{
-    margin-top:-35px;
-    text-align: center;
+button{
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    margin-top:15px;
     text-transform: uppercase;
     font-size:60px;
     letter-spacing: 2px;
     color:#35B6BF;
+    font-weight:900;
+    margin-left: 25%;}
+
+button:hover{
+    color:#F7E246;
 }
 
-h3:hover{
-    color:#F7E246;
+.inputarea{
+    visibility:hidden;
+}
+
+h3{
+    font-size: 100px;
+    text-transform: uppercase;
+    position:fixed;
+    align-content: center;
+    font-weight: 400;
+    margin: -100px auto 0px;
+}   
+
+#my-canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
 }

@@ -13,10 +13,14 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true})); //use body-parser
 app.use(express.static(path.join(__dirname, "/public")));  //allow use of public static resources
 app.use(express.static(path.join(__dirname, "/views")));
+app.use(express.static(path.join(__dirname, "/node_modules")));
 
 app.get("/", (req, res) => {
     res.render(path.join(__dirname, "/views/signup.ejs"), {confirmation: userCreated, username: username});
-    userCreated = false;    //reset flag
+    
+    //reset global variables
+    userCreated = false;
+    username = "";
 });
 
 app.post("/create-user", (req, res) => {
