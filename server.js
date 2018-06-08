@@ -1,7 +1,6 @@
 //Global Variables
 var username = "";
 var userCreated = false;
-
 var HTTP_PORT = process.env.PORT || 8080;
 
 var data_service = require("./data-service.js");

@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     </head>
     <body>
+    <% if(!confirmation){  %>
         <div id="form-container">
             <h1 id="signup">Sign up</h1>
             
@@ -15,16 +16,19 @@
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input id="password" type="password" name="password" placeholder="Password" onkeyup="validate();" required>
                 <input id="vpassword" type="password" name="vpassword" placeholder="Verify Password" onkeyup="validate();" required>
-                <button type="submit" name="submit" id="submit" >Ok!e</button>  <!-- TODO: Horizontally center button responsively. -->
+                <button type="submit" name="submit" id="submit" >Ok!e</button>
             </form>
-            <h2>Already have an account? <a href="#">Sign in</a>.</h2> <!--TODO: Style change for anchor tag.-->
+            <h2>Already have an account? <a href="#">Sign in</a>.</h2>
         </div>
-        <div id="welcome-container">    <!-- TODO: Vertically center welcome-container and elements inside -->
+    <% } else{ %>
+        <div id="welcome-container">
             <h4>Welcome to the party!</h4>
             <h3 id="username">Supa awesome engineer</h3>
         </div>
-    <canvas id="my-canvas"></canvas>
-        <script type="text/javascript" src="js/signup-validator.js"></script> <!--Let page load before initializing script.-->
+        <canvas id="my-canvas"></canvas>
+    <% } %>
+        <!--Let page load before initializing script.-->
+        <script type="text/javascript" src="js/signup-validator.js"></script>
         <script type="text/javascript" src="confetti-js/dist/index.min.js"></script>
         <script type="text/javascript">
             
@@ -39,8 +43,6 @@
                 confetti.render();
 
                 document.getElementById("username").textContent = username;
-                document.getElementById("form-container").style.visibility = "hidden";
-                document.getElementById("welcome-container").style.visibility = "visible";
                 document.querySelector("body").style.backgroundColor = "white";
             }
         </script>
