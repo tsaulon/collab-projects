@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 body{
-    font-family:"Gibson";
+    font-family:"Lato", sans-serif;
     color:#35B6BF;
     background-color:rgba(53,182,191,0.2);
     font-size:15px;
-    font-weight: 100;
+    font-weight: 900;
     letter-spacing: 0.5px;
 }
 

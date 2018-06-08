@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "/public")));  //allow use of public
 app.use(express.static(path.join(__dirname, "/views")));
 
 app.get("/", (req, res) => {
-    res.render(path.join(__dirname, "/views/signup.ejs"), {confirmation: userCreated});
+    res.render(path.join(__dirname, "/views/signup.ejs"), {confirmation: userCreated, username: username});
     userCreated = false;    //reset flag
 });
 
