@@ -4,9 +4,10 @@
         <title>Sign Up</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet"> <!--Searching from static '/public' directory.-->
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     </head>
     <body>
-        <div id="form-container"><!--TODO: Maintain visibility during signup process-->
+        <div id="form-container">
             <h1 id="signup">Sign up</h1>
             
             <form action="create-user" method="post">
@@ -14,12 +15,13 @@
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input id="password" type="password" name="password" placeholder="Password" onkeyup="validate();" required>
                 <input id="vpassword" type="password" name="vpassword" placeholder="Verify Password" onkeyup="validate();" required>
-                <button type="submit" name="submit" id="submit" disabled>Ok!e</button> <!-- TODO: Style button to same fashion as h3 tag (Ok!e) below. -->
+                <button type="submit" name="submit" id="submit" >Ok!e</button>  <!-- TODO: Horizontally center button responsively. -->
             </form>
             <h2>Already have an account? <a href="#">Sign in</a>.</h2> <!--TODO: Style change for anchor tag.-->
         </div>
-        <div>
-            <h1 id="username"><!--Username is generated here--></h1>
+        <div id="welcome-container">    <!-- TODO: Vertically center welcome-container and elements inside -->
+            <h4>Welcome to the party!</h4>
+            <h3 id="username">Supa awesome engineer</h3>
         </div>
     <canvas id="my-canvas"></canvas>
         <script type="text/javascript" src="js/signup-validator.js"></script> <!--Let page load before initializing script.-->
@@ -38,10 +40,9 @@
 
                 document.getElementById("username").textContent = username;
                 document.getElementById("form-container").style.visibility = "hidden";
+                document.getElementById("welcome-container").style.visibility = "visible";
+                document.querySelector("body").style.backgroundColor = "white";
             }
-
-            
-
         </script>
     </body>
 </html>
